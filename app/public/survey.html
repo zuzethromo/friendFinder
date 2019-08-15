@@ -128,7 +128,17 @@
     </div>
     
     <script type="text/javascript">
-    
+
+        let config = {
+            ".chosen-select": {},
+            ".chosen-select-no-results": {no_results_text: "Sorry, nothing found!"},
+            ".chosen-select-width": { width: "50%" }
+        };
+
+        for (let selector in config) {
+            $(selector).chosen(config[selector]);
+        }
+        
         $("#submit").on("click", function(){
             function validateForm() {
                 let isValid = true;
